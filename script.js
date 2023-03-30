@@ -2,24 +2,11 @@
 
 window.addEventListener("load", initApp);
 
-function initApp() {
-  const jimbo = {
-    name: "Jimbo Kern",
-    nickname: "Jimbo",
-    image: "Jimboooooooo.webp",
-    occupation: "Hunter, Gun Shop Owner, Little League Umpire, Television Show Host",
-    age: 51,
-    voicedBy: "Matt Stone",
-    gender: "Male",
-    religion: "Roman Catholic",
-    catchphrase: "It's coming right for us!",
-    hairColor: "Brown",
-    schoolGrade: null,
-    firstAppearance: "S01 E01, S01 E02",
-  };
-  console.log(jimbo);
+async function initApp() {
+  const character = await getCharacter();
+  character.forEach(showCharacter);
 
-  showCharacter(jimbo);
+
 }
 
 function showCharacter(character) {
@@ -50,11 +37,24 @@ function showCharacter(character) {
       <p>Catchphrase: ${character.catchphrase}</p>
       <p>Hair color: ${character.hairColor}</p>
       <p>School grade: ${character.schoolGrade}</p>
+      <p>Episodes: ${character.episodes}</p>
+      <p>Appearances: ${character.appearances}</p>
       <p>First appearance: ${character.firstAppearance}</p>
+      <form method="dialog">
+           <button>Close</button>
+      </form>
     `;
     const dialog = document.querySelector("dialog");
     dialog.innerHTML = "";
     dialog.insertAdjacentHTML("beforeend", dialogHtml);
     dialog.showModal();
   }
+}
+
+async function getCharacter(url){
+  const response = await fetch(
+    "https://cederdorff.github.io/dat-js/05-data/southpark.json"
+  );
+  const data = await response.json();
+  return data;
 }

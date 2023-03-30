@@ -1,7 +1,7 @@
 {
   "name": "Jimbo Kern",
   "nickname": "Jimbo",
-  "image": "Jimboooooooo.webp",
+  "image": "https://static.wikia.nocookie.net/southpark/images/d/d2/JimboKernBestImage.png/revision/latest?cb=20220410025619",
   "occupation": "Hunter, Gun Shop Owner, Little League Umpire, Television Show Host",
   "age": 51,
   "voicedBy": "Matt Stone",
@@ -10,5 +10,7 @@
   "catchphrase": "It's coming right for us!",
   "hairColor": "Brown",
   "schoolGrade": null,
+  "episodes": "S01E01 to S26E05",
+  "appearances": 87,
   "firstAppearance": "S01 E01, S01 E02"
 }
